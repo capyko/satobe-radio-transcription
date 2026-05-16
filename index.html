@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>松田悟志 Official Radio Hub</title>
+    <title>Satoshi Matsuda Official</title>
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            /* 落ち着いた知性を感じる非常に深いネイビーブラック */
+            --bg-color: #0b0f19;
             --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-hover: #7dd3fc;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-sub: #64748b;
+            --line-color: #334155;
         }
 
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background: var(--bg-gradient);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
             padding: 0;
@@ -24,146 +23,90 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        .hub-container {
-            text-align: center;
-            max-width: 600px;
-            width: 90%;
-            padding: 40px 20px;
-            box-sizing: border-box;
+        .container {
+            max-width: 500px;
+            width: 85%;
+            padding: 20px 0;
         }
 
-        /* アニメーションする音声ウェーブ風の装飾 */
-        .logo-area {
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .logo-icon {
-            font-size: 3.5rem;
-            color: var(--accent-color);
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 15px var(--accent-color)); }
-            100% { transform: scale(1); opacity: 0.9; }
+        header {
+            margin-bottom: 60px;
         }
 
         h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            margin: 0 0 10px 0;
-            background: linear-gradient(to right, #fff, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            margin: 0 0 8px 0;
         }
 
-        .tagline {
-            font-size: 1rem;
+        .subtitle {
+            font-size: 0.85rem;
             color: var(--text-sub);
-            margin-bottom: 50px;
-            font-weight: 300;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+
+        nav {
+            border-top: 1px solid var(--line-color);
+        }
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line-color);
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        .link-title {
+            font-size: 1rem;
             letter-spacing: 0.05em;
         }
 
-        /* メインリンクボタン */
-        .main-link-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 16px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            text-decoration: none;
-            display: block;
-        }
-
-        .main-link-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
-        }
-
-        .card-label {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--accent-color);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
-
-        .card-title {
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin: 0 0 10px 0;
-            font-weight: 600;
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
+        .link-date {
+            font-size: 0.8rem;
             color: var(--text-sub);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .arrow-icon {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            transition: transform 0.3s ease;
-        }
-
-        .main-link-card:hover .arrow-icon {
-            transform: translateX(5px);
+            font-variant-numeric: tabular-nums;
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 0.8rem;
-            color: rgba(148, 163, 184, 0.5);
+            margin-top: 80px;
+            font-size: 0.75rem;
+            color: var(--text-sub);
             letter-spacing: 0.05em;
         }
     </style>
 </head>
 <body>
 
-<div class="hub-container">
+<div class="container">
     <header>
-        <div class="logo-area">
-            <!-- ラジオや音声を象徴するアイコン（絵文字） -->
-            <div class="logo-icon">🎙️</div>
-        </div>
-        <h1>SATOSHI MATSUDA</h1>
-        <div class="tagline">Official Radio & Creative Hub</div>
+        <h1>Satoshi Matsuda</h1>
+        <p class="subtitle">Radio & Creative Archive</p>
     </header>
 
     <main>
-        <!-- 文字起こしページへのリンクカード -->
-        <a href="radio_log.html" class="main-link-card">
-            <span class="card-label">Latest Radio Log</span>
-            <div class="card-title">さとべぇRADIO 文字起こし</div>
-            <p class="card-desc">
-                5月16日配信回：SNSでの驚きの反響と、自叙伝小説『仮面ライダーのなり方』英訳プロジェクトへの新たな決意について。
-            </p>
-            <div class="arrow-icon">Listen with Text ➔</div>
-        </a>
+        <nav>
+            <!-- リンクの要素。今後アーカイブが増えたらこのaタグを下に複製していけます -->
+            <a href="radio_log.html" class="nav-link">
+                <span class="link-title">さとべぇRADIO 文字起こし</span>
+                <span class="link-date">2026.05.16</span>
+            </a>
+        </nav>
     </main>
 
     <footer>
-        &copy; SATOSHI MATSUDA All Rights Reserved.
+        <p>&copy; SATOSHI MATSUDA</p>
     </footer>
 </div>
 
