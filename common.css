@@ -1,0 +1,273 @@
+/* =========================================================
+   さとべぇRADIO Transcript Archive - Common CSS
+   index.html と各日付ページで共通利用します。
+   ========================================================= */
+
+:root {
+    --archive-bg: #0b0f19;
+    --archive-text-main: #f8fafc;
+    --archive-text-sub: #64748b;
+    --archive-line: #334155;
+
+    --page-primary: #2c3e50;
+    --page-text: #333333;
+    --page-bg: #f9f9f9;
+    --page-card: #ffffff;
+    --page-accent: #e74c3c;
+    --page-highlight: #fff9db;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   Archive index page
+   ========================================================= */
+
+body.archive-index {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--archive-bg);
+    color: var(--archive-text-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.archive-index .container {
+    max-width: 500px;
+    width: 85%;
+    padding: 20px 0;
+}
+
+.archive-index header {
+    margin-bottom: 60px;
+}
+
+.archive-index h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin: 0 0 8px 0;
+}
+
+.archive-index .subtitle {
+    font-size: 0.85rem;
+    color: var(--archive-text-sub);
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+.archive-index nav {
+    border-top: 1px solid var(--archive-line);
+}
+
+.archive-index .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+    color: var(--archive-text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--archive-line);
+    transition: opacity 0.2s ease;
+}
+
+.archive-index .nav-link:hover {
+    opacity: 0.6;
+}
+
+.archive-index .link-title {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.archive-index .link-date {
+    font-size: 0.8rem;
+    color: var(--archive-text-sub);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.archive-index footer {
+    margin-top: 80px;
+    font-size: 0.75rem;
+    color: var(--archive-text-sub);
+    letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   Transcript detail pages
+   ========================================================= */
+
+body.transcript-page {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.8;
+    color: var(--page-text);
+    background-color: var(--page-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.transcript-page .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.transcript-page header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--page-primary);
+    padding-bottom: 20px;
+}
+
+.transcript-page header h1 {
+    color: var(--page-primary);
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+
+.transcript-page .meta-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.transcript-page article {
+    background-color: var(--page-card);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.transcript-page section {
+    margin-bottom: 30px;
+}
+
+.transcript-page p {
+    margin: 0 0 1.5rem 0;
+    text-align: justify;
+}
+
+.transcript-page strong {
+    color: var(--page-primary);
+    background: linear-gradient(transparent 60%, var(--page-highlight) 60%);
+    padding: 0 2px;
+}
+
+.transcript-page .greeting,
+.transcript-page .closing {
+    font-size: 1.05rem;
+    color: var(--page-primary);
+    border-left: 4px solid var(--page-accent);
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+.transcript-page footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* 前後ページ移動ナビ */
+.transcript-page .episode-nav {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: 10px;
+    margin: 30px 0 10px;
+}
+
+.transcript-page .episode-nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 10px;
+    border-radius: 999px;
+    background-color: var(--page-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.transcript-page .episode-nav-button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.transcript-page .episode-nav-button.is-home {
+    background-color: #666;
+}
+
+.transcript-page .episode-nav-button.is-disabled {
+    background-color: #cbd5e1;
+    color: #64748b;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.transcript-page .swipe-hint {
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+    margin: 12px 0 0;
+}
+
+@media (max-width: 600px) {
+    .archive-index {
+        align-items: flex-start;
+    }
+
+    .archive-index .container {
+        width: 88%;
+        padding: 32px 0;
+    }
+
+    .archive-index header {
+        margin-bottom: 40px;
+    }
+
+    .archive-index .nav-link {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        padding: 22px 0;
+    }
+
+    .transcript-page .container {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .transcript-page article {
+        padding: 20px;
+    }
+
+    .transcript-page header h1 {
+        font-size: 1.4rem;
+    }
+
+    .transcript-page .episode-nav {
+        position: sticky;
+        bottom: 10px;
+        z-index: 10;
+        grid-template-columns: 1fr 0.8fr 1fr;
+        background: rgba(249, 249, 249, 0.9);
+        padding: 8px 0;
+        backdrop-filter: blur(6px);
+    }
+
+    .transcript-page .episode-nav-button {
+        font-size: 0.82rem;
+        padding: 10px 6px;
+    }
+}
