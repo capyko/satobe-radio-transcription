@@ -4,101 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>さとべぇRADIO 文字起こし | 松田悟志</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --text-color: #333333;
-            --bg-color: #f9f9f9;
-            --card-bg: #ffffff;
-            --accent-color: #e74c3c;
-            --highlight-bg: #fff9db;
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-        }
-
-        header h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
-        }
-
-        .meta-info {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        article {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        p {
-            margin: 0 0 1.5rem 0;
-            text-align: justify;
-        }
-
-        strong {
-            color: var(--primary-color);
-            background: linear-gradient(transparent 60%, var(--highlight-bg) 60%);
-            padding: 0 2px;
-        }
-
-        .greeting, .closing {
-            font-size: 1.05rem;
-            color: var(--primary-color);
-            border-left: 4px solid var(--accent-color);
-            padding-left: 15px;
-            margin: 20px 0;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #888;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                margin: 10px auto;
-                padding: 10px;
-            }
-            article {
-                padding: 20px;
-            }
-            header h1 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="common.css">
 </head>
-<body>
+<body class="transcript-page" data-prev="20260516.html" data-next="">
 
 <div class="container">
     <header>
@@ -107,7 +15,7 @@
     </header>
 
     <main>
-        <article>
+		<article>
             <!-- オープニング -->
             <section>
                 <p>さとべぇRADIOへようこそ。</p>
@@ -188,6 +96,13 @@
                 <p>あなたの今日が、素敵なものとなりますように。</p>
             </section>
         </article>
+
+        <nav class="episode-nav" aria-label="Navigate between dates">
+            <a class="episode-nav-button" href="20260516.html">← Prev</a>
+            <a class="episode-nav-button is-home" href="index.html">List</a>
+            <span class="episode-nav-button is-disabled" aria-disabled="true">Next →</span>
+        </nav>
+        <p class="swipe-hint">Swipe left/right on mobile to switch dates.</p>
     </main>
 
     <footer>
@@ -195,5 +110,6 @@
     </footer>
 </div>
 
+<script src="episode-nav.js"></script>
 </body>
 </html>
