@@ -70,7 +70,7 @@ body.archive-index {
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding: 24px 0;
+    padding: 16px 0;
     color: var(--archive-text-main);
     text-decoration: none;
     border-bottom: 1px solid var(--archive-line);
@@ -240,7 +240,7 @@ body.transcript-page {
         align-items: flex-start;
         flex-direction: column;
         gap: 6px;
-        padding: 22px 0;
+        padding: 16px 0;
     }
 
     .transcript-page .container {
